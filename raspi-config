@@ -8,6 +8,7 @@
 export REPO="RasQberry-Two"
 if [ -e $HOME/$REPO/RQB2-initial.env ] ; then
   . $HOME/$REPO/RQB2-initial.env
+fi
 if [ -e $HOME/$REPO/config/setup.sh ] ; then
   . $HOME/$REPO/config/setup.sh
 else
