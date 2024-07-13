@@ -11,7 +11,7 @@ if [ -e /home/$RQB2USER/$REPO/RQB2-initial.env ] ; then
   . /home/$RQB2USER/$REPO/RQB2-initial.env
 fi
 if [ -e /home/$RQB2USER/$REPO/config/setup.sh ] ; then
-  . /home/$RQB2USEROME/$REPO/config/setup.sh
+  . /home/$RQB2USER/$REPO/config/setup.sh
 else
   echo "/home/$RQB2USER/$REPO/config/setup.sh does not exist"
 fi  
