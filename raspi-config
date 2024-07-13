@@ -6,11 +6,11 @@
 # modification for RasQberry
 # Load environmend and methods
 RQB2_CONFDIR=.local/config # Attention: variable is defined in multiple files
-SETUPSH=/home/$SUDO_USER/$RQB2_CONFDIR/setup.sh
-if [ -e $SETUPSH ] ; then
-  . $SETUPSH
+SETUP_SH=/home/$SUDO_USER/$RQB2_CONFDIR/setup.sh
+if [ -e $SETUP_SH ] ; then
+  . $SETUP_SH
 else
-  echo "ERROR: $SETUPSH does not exist !"
+  echo "ERROR: $SETUP_SH does not exist !"
 fi  
 
 
