@@ -5,12 +5,12 @@
 
 # modification for RasQberry
 # Load environmend and methods
-export REPO="RasQberry-Two"
-
-if [ -e /home/$SUDO_USER/$REPO/config/setup.sh ] ; then
-  . /home/$SUDO_USER/$REPO/config/setup.sh
+RQB2_CONFDIR=.local/config # Attention: variable is defined in multiple files
+SETUPSH=/home/$SUDO_USER/$RQB2_CONFDIR/setup.sh
+if [ -e $SETUPSH ] ; then
+  . $SETUPSH
 else
-  echo "ERROR: /home/$SUDO_USER/$REPO/config/setup.sh does not exist !"
+  echo "ERROR: $SETUPSH does not exist !"
 fi  
 
 
