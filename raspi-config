@@ -4,10 +4,15 @@
 # See LICENSE file for copyright and license details
 
 # modification for RasQberry
-# Load external methods
-REPO="RasQberry-Two"
-RQB_USER="pi"
-. /home/$RQB_USER/$REPO/config/setup.sh
+# Load environmend and methods
+export REPO="RasQberry-Two"
+if [ -e $HOME/$REPO/RQB2-initial.env ] ; then
+  . $HOME/$REPO/RQB2-initial.env
+if [ -e $HOME/$REPO/config/setup.sh ] ; then
+  . $HOME/$REPO/config/setup.sh
+else
+  echo "$HOME/$REPO/config/setup.sh does not exist"
+fi  
 
 
 INTERACTIVE=True
@@ -3614,7 +3619,7 @@ if [ "$INTERACTIVE" = True ]; then
         FMEMSIZE="$(expr $MEMSIZE / 1024)GB"
       fi
       FUN=$(whiptail --title "Raspberry Pi Software Configuration Tool (raspi-config)" --backtitle "$(cat /proc/device-tree/model), ${FMEMSIZE}" --menu "Setup Options" $WT_HEIGHT $WT_WIDTH $WT_MENU_HEIGHT --cancel-button Finish --ok-button Select \
-        "0 RasQberry" "Setup RasQberry-Two" \
+        "0 RasQberry" "Configure RasQberry-Two" \
         "1 System Options" "Configure system settings" \
         "2 Display Options" "Configure display settings" \
         "3 Interface Options" "Configure connections to peripherals" \
