@@ -6,13 +6,14 @@
 # modification for RasQberry
 # Load environmend and methods
 export REPO="RasQberry-Two"
-if [ -e $HOME/$REPO/RQB2-initial.env ] ; then
-  . $HOME/$REPO/RQB2-initial.env
+export RQB2USER="pi"
+if [ -e /home/$RQB2USER/$REPO/RQB2-initial.env ] ; then
+  . /home/$RQB2USER/$REPO/RQB2-initial.env
 fi
-if [ -e $HOME/$REPO/config/setup.sh ] ; then
-  . $HOME/$REPO/config/setup.sh
+if [ -e /home/$RQB2USER/$REPO/config/setup.sh ] ; then
+  . /home/$RQB2USEROME/$REPO/config/setup.sh
 else
-  echo "$HOME/$REPO/config/setup.sh does not exist"
+  echo "/home/$RQB2USER/$REPO/config/setup.sh does not exist"
 fi  
 
 
