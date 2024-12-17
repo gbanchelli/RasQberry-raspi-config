@@ -633,6 +633,7 @@ update_wayfire_keyboard() {
   if [ ! -e $UFILE ] && [ -e /etc/wayfire/template.ini ] ; then
     CONFIG_DIR="$(dirname "$UFILE")"
     if ! [ -d "$CONFIG_DIR" ]; then
+    echo "!!! ADDING CONFIG_DIR FOR $USER - Wayfire"
       install -o "$USER" -g "$USER" -d "$CONFIG_DIR"
     fi
     cp /etc/wayfire/template.ini $UFILE
@@ -670,6 +671,7 @@ update_labwc_keyboard() {
   if [ ! -e $UFILE ] ; then
     CONFIG_DIR="$(dirname "$UFILE")"
     if ! [ -d "$CONFIG_DIR" ]; then
+    echo "!!! ADDING CONFIG_DIR FOR $USER - Labwcenv"
       install -o "$USER" -g "$USER" -d "$CONFIG_DIR"
     fi
     touch $UFILE
@@ -684,6 +686,7 @@ update_labwc_keyboard() {
   UFILE="/usr/share/labwc/environment"
   if [ ! -e $UFILE ] ; then
     CONFIG_DIR="$(dirname "$UFILE")"
+    echo "!!! mkdir CONFIG_DIR FOR $USER - Labwc environment"
     mkdir -p "$CONFIG_DIR"
     touch $UFILE
   fi
